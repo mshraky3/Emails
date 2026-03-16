@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Email Automation Service</title>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --accent: #f59e0b;
+      --line: #374151;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: radial-gradient(circle at top right, #1f2937, var(--bg));
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 24px;
+    }
+    .card {
+      width: min(760px, 100%);
+      background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0)), var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.35);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 30px;
+      letter-spacing: 0.2px;
+    }
+    p {
+      margin: 0 0 16px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+    .pill {
+      display: inline-block;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(245, 158, 11, 0.14);
+      color: var(--accent);
+      border: 1px solid rgba(245, 158, 11, 0.35);
+      font-size: 13px;
+      margin-bottom: 16px;
+    }
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      color: #fef3c7;
+      background: #111827;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      padding: 12px;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+    a:hover {
+      border-color: var(--accent);
+      transform: translateY(-1px);
+    }
+    .small {
+      margin-top: 14px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+    code {
+      color: #fde68a;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <div class="pill">Vercel Deployment Live</div>
+    <h1>Email Automation Service</h1>
+    <p>This service runs scheduled email automations (age reminder, gold advisory, GitHub streak, job digest, and application follow-up).</p>
+    <ul>
+      <li><a href="/api/health">/api/health</a></li>
+      <li><a href="/api/test-email">/api/test-email</a></li>
+      <li><a href="/api/cron/dispatch-daily-reminder">/api/cron/dispatch-daily-reminder</a></li>
+      <li><a href="/api/cron/monitor-gold-price">/api/cron/monitor-gold-price</a></li>
+      <li><a href="/api/cron/check-github-streak">/api/cron/check-github-streak</a></li>
+      <li><a href="/api/cron/send-job-digest">/api/cron/send-job-digest</a></li>
+      <li><a href="/api/cron/check-applications">/api/cron/check-applications</a></li>
+    </ul>
+    <p class="small">Note: cron endpoints may return <code>401 Unauthorized</code> if <code>CRON_SECRET</code> is enabled and request headers are missing.</p>
+    <p class="small">If <code>CRON_SECRET</code> is enabled, call <code>/api/test-email?key=YOUR_CRON_SECRET</code> for manual browser testing.</p>
+  </main>
+</body>
+</html>

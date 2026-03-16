@@ -1,4 +1,10 @@
 {
+    "rewrites": [
+        {
+            "source": "/favicon.ico",
+            "destination": "/favicon.svg"
+        }
+    ],
     "crons": [
         {
             "path": "/api/cron/seed-daily-reminder",
