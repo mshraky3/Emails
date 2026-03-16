@@ -1,0 +1,10 @@
+[
+    {
+        "company": "Example Tech",
+        "role": "Junior Frontend Developer",
+        "appliedDate": "2026-03-01",
+        "status": "applied",
+        "link": "https://example.com/jobs/frontend-junior",
+        "notes": "Submitted CV and portfolio"
+    }
+]

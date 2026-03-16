@@ -1,0 +1,23 @@
+{
+  "name": "personal-reminder-service",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "dev": "node src/dev.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "Personal reminder and gold advisory service",
+  "dependencies": {
+    "axios": "^1.13.6",
+    "cheerio": "^1.2.0",
+    "dotenv": "^17.3.1",
+    "nodemailer": "^8.0.2"
+  },
+  "devDependencies": {
+    "vitest": "^2.1.9"
+  }
+}

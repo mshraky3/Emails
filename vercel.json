@@ -1,0 +1,28 @@
+{
+    "crons": [
+        {
+            "path": "/api/cron/seed-daily-reminder",
+            "schedule": "0 21 * * *"
+        },
+        {
+            "path": "/api/cron/dispatch-daily-reminder",
+            "schedule": "*/5 * * * *"
+        },
+        {
+            "path": "/api/cron/monitor-gold-price",
+            "schedule": "0 3,9,15,21 * * *"
+        },
+        {
+            "path": "/api/cron/check-github-streak",
+            "schedule": "0 17 * * *"
+        },
+        {
+            "path": "/api/cron/send-job-digest",
+            "schedule": "0 5 * * *"
+        },
+        {
+            "path": "/api/cron/check-applications",
+            "schedule": "0 6 * * 1"
+        }
+    ]
+}
