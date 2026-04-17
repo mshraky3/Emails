@@ -19,7 +19,7 @@ const transporter = nodemailer.createTransport({
  */
 export async function sendEmail(subject, html, text) {
     const mailOptions = {
-        from: `Reminder Service <${config.email.user}>`,
+        from: `${config.email.fromName} <${config.email.user}>`,
         to: config.email.to,
         subject,
         html,

@@ -24,6 +24,7 @@ const defaultEmail = {
     host: 'smtp.gmail.com',
     port: 587,
     secure: false,
+    fromName: 'HR system',
     user: 'alshrakynodeapp@gmail.com',
     to: 'alshraky3@gmail.com',
 };
@@ -33,6 +34,7 @@ const config = {
         host: process.env.EMAIL_HOST || defaultEmail.host,
         port: parseIntOr(process.env.EMAIL_PORT, defaultEmail.port),
         secure: (process.env.EMAIL_SECURE || String(defaultEmail.secure)) === 'true',
+        fromName: process.env.EMAIL_FROM_NAME || defaultEmail.fromName,
         user: process.env.EMAIL_USER || defaultEmail.user,
         pass: process.env.EMAIL_PASS || '',
         to: process.env.EMAIL_TO || defaultEmail.to,
