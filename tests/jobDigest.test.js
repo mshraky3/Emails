@@ -42,6 +42,22 @@ describe('job filtering', () => {
         expect(result[0].title).toBe('React Engineer');
     });
 
+    it('excludes future-dated remotive jobs', () => {
+        const now = new Date('2026-03-17T12:00:00Z');
+        const jobs = [
+            {
+                title: 'React Engineer',
+                company_name: 'A',
+                url: 'https://example.com/1',
+                tags: ['React'],
+                publication_date: '2026-03-17T13:00:00Z',
+            },
+        ];
+
+        const result = filterRemotiveJobs(jobs, ['React'], now);
+        expect(result).toHaveLength(0);
+    });
+
     it('parses and filters wuzzuf rss feed', () => {
         const xml = `<?xml version="1.0"?><rss><channel>
             <item>

@@ -7,10 +7,6 @@
     ],
     "crons": [
         {
-            "path": "/api/cron/seed-daily-reminder",
-            "schedule": "0 21 * * *"
-        },
-        {
             "path": "/api/cron/dispatch-daily-reminder",
             "schedule": "*/5 * * * *"
         },

@@ -12,7 +12,6 @@ This version runs in **stateless mode** and does **not** require Upstash Redis.
 ```
 api/
   cron/
-    seed-daily-reminder.js   – midnight: pick random reminder time
     dispatch-daily-reminder.js – every 5 min: send if time matches
     monitor-gold-price.js     – every 6h: fetch, analyze, alert
   health.js                   – status dashboard
@@ -58,7 +57,6 @@ src/
 
 | Job | Schedule (UTC) | Purpose |
 |-----|---------------|---------|
-| seed-daily-reminder | `0 21 * * *` (midnight Riyadh) | Pick random daytime hour for today's age reminder |
 | dispatch-daily-reminder | `*/5 * * * *` | Check if it's time to send age reminder |
 | monitor-gold-price | `0 3,9,15,21 * * *` | Fetch gold, check thresholds, send alerts |
 
