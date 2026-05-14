@@ -16,7 +16,8 @@ export function includesAnyKeyword(text, keywords) {
 export function isWithinLastDay(dateString, now = new Date()) {
     const ts = Date.parse(dateString);
     if (Number.isNaN(ts)) return false;
-    return now.getTime() - ts <= DAY_MS;
+    const ageMs = now.getTime() - ts;
+    return ageMs >= 0 && ageMs <= DAY_MS;
 }
 
 export function filterRemotiveJobs(rawJobs, keywords, now = new Date()) {

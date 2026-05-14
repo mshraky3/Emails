@@ -24,7 +24,7 @@ const defaultEmail = {
     host: 'smtp.gmail.com',
     port: 587,
     secure: false,
-    fromName: 'HR system',
+    fromName: 'for-you',
     user: 'alshrakynodeapp@gmail.com',
     to: 'alshraky3@gmail.com',
 };
